@@ -20,3 +20,7 @@ startgenericstudybrowsing() {
 resultinglinks() {
 	duckduckgo $1 | grep "www." | vim
 }
+
+ao3() {
+	w3m https://archiveofourown.org/works/search?work_search%5Bquery%5D=$1
+}
