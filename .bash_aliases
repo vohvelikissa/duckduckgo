@@ -24,3 +24,7 @@ resultinglinks() {
 ao3() {
 	w3m https://archiveofourown.org/works/search?work_search%5Bquery%5D=$1
 }
+
+youtube() {
+	/bin/brave-browser $(duckduckgo "$1" | grep "www.youtube.com" | fzf)
+}
