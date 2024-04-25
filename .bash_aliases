@@ -28,3 +28,10 @@ ao3() {
 youtube() {
 	/bin/brave-browser $(duckduckgo "$1" | grep "www.youtube.com" | fzf)
 }
+
+findemailsbyprofession() {
+	w3m google.com/search?q="\"@gmail.com\" AND $1" | grep "@gmail.com"	
+	w3m google.com/search?q="\"@icloud.com\" AND $1" | grep "@icloud.com"
+	w3m google.com/search?q="\"@yahoo.com\" AND $1" | grep "@yahoo.com"
+	w3m google.com/search?q="\"@outlook.com\" AND $1" | grep "@outlook.com"
+}
