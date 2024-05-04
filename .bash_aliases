@@ -30,7 +30,18 @@ youtube() {
 }
 
 downloadyoutube() {
+	perkele=$(pwd)
+	cd ~/Music
 	youtube-dl -x --audio-format "mp3" $(duckduckgo "$1" | grep "www.youtube.com" | fzf)
+	cd $perkele
+}
+
+findsongbylyrics() {
+	duckduckgo "$1" | grep "YouTube" | fzf
+}
+
+downloadsongbylyrics() {
+	downloadyoutube $(findsongbylyrics "$1")
 }
 
 findemailsbyprofession() {
