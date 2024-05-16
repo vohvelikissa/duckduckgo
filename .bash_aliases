@@ -36,6 +36,15 @@ downloadyoutube() {
 	cd $perkele
 }
 
+playmusic() {
+	perkele=$(pwd)
+	cd ~/Music
+	mpv "$(ls | fzf)"
+	cd $perkele
+}
+
+alias spotify='while true; do playmusic; done;'
+
 findsongbylyrics() {
 	duckduckgo "$1" | grep "YouTube" | fzf
 }
